@@ -1,4 +1,4 @@
-const movies = [
+export const movies = [
     {
         id: 0,
         isRented: false,
@@ -46,19 +46,17 @@ const movies = [
     },
 ];
 
-const users =[
+export const users = [
     {
-      id: 0,
-      name: "Shalev",
-      balance: 1000,
-      avatar:
-        "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+        id: 0,
+        name: "Shalev",
+        balance: 1000,
+        avatar: "https://as1.ftcdn.net/v2/jpg/02/45/28/14/1000_F_245281469_8BxP6VT7st0gj6qNfLUVVq1UJt0NfFEd.jpg",
     },
     {
-      id: 1,
-      name: "Ohad",
-      balance: 1000,
-      avatar:
-        "https://vignette.wikia.nocookie.net/disney-fan-fiction/images/4/42/Tarzan_2004_cover.jpg/revision/latest?cb=20140331030811",
+        id: 1,
+        name: "Ohad",
+        balance: 1000,
+        avatar: "https://as1.ftcdn.net/v2/jpg/02/45/28/14/1000_F_245281469_8BxP6VT7st0gj6qNfLUVVq1UJt0NfFEd.jpg",
     },
-  ]
+];

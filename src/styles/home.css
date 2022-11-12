@@ -103,3 +103,8 @@ input{
     grid-area: d;
     background-image: url("https://artfiles.alphacoders.com/565/56528.jpg");
 }
+
+.profiles-container{
+    display: flex;
+    flex-direction: row;
+}

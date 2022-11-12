@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home.js";
-import Catalog from "./components/NavBar.js";
-import Item from "./components/Item.js";
+import Catalog from "./components/Catalog.js";
 import NavBar from "./components/NavBar.js";
-import movies from "./data/mockData.js";
-import users from "./data/mockData.js";
+import Description from "./components/Description.js";
+import { movies } from "./data/mockData.js";
+import { users } from "./data/mockData.js";
 
 class App extends Component {
     constructor() {
         super();
         this.state = {
             movies,
-            user: null,
             users,
+            user: null,
         };
     }
 
@@ -30,7 +30,7 @@ class App extends Component {
         const state = this.state;
         return (
             <Router>
-                <div>
+                <div className="app-container">
                     <NavBar user={state.user} />
                     <Route
                         path="/"
@@ -57,7 +57,9 @@ class App extends Component {
                         exact
                         path="/movies/:id"
                         render={({ match }) => (
-                            <Item movie={state.movies[match.params.id]} />
+                            <Description
+                                movie={state.movies[match.params.id]}
+                            />
                         )}
                     />
                 </div>

@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 import "../styles/item.css";
+import { Link } from "react-router-dom";
 
 class Item extends Component {
+    toggleRentStatus = () => {
+        const movieId = this.props.movie.id;
+        this.props.toggleRentStatus(movieId);
+    };
+
     render() {
+        const movie = this.props.movie;
         return (
-            <div id="creature-container">
-                <h1></h1>
-                <img src={""} alt="" />
-                <div className="title">Power:</div>
-                <div className="power text"> {"fentity.power"}</div>
-                <div className="other text">{"fentity.other"}</div>
+            <div className="item-container">
+                <div className="item-header">
+                    <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+                </div>
+                <div className="item-body">
+                    <button onClick={this.toggleRentStatus}>{"+"}</button>
+                </div>
             </div>
         );
     }

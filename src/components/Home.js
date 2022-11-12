@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
-
-import '../styles/home.css'
+import React, { Component } from "react";
+import "../styles/home.css";
+import User from "./User";
 
 class Home extends Component {
+    changeUser = (user) => this.props.setUser(user);
 
     render() {
+        const users = this.props.users;
+        const usersComponents = users.map((user) => (
+            <User changeUser={this.changeUser} user={user} key={user.id} />
+        ));
+
         return (
-            <div>
-                <div id="u-input">
-                    <input type="text" placeholder="Ask and you shall receive" />
-                    <div id="button">Seek</div>
-                </div>
-
-                <h1 id="home-title">Your Adventure</h1>
-
-                <div id="home-container">
-                    <div id="world"><span className="main-directory-text">World</span></div>
-                    <div id="wizards"><span className="main-directory-text">Wizards</span></div>
-                    <div id="bestiary"><span className="main-directory-text">Bestiary</span></div>
-                    <div id="potions"><span className="main-directory-text">Potions</span></div>
-                    <div id="deities"><span className="main-directory-text">Deities</span></div>
-                </div>
+            <div className="profiles-container" onClick={this.changeUser}>
+                {usersComponents}
             </div>
         );
     }
 }
-
 export default Home;

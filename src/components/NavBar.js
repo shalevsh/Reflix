@@ -1,25 +1,30 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "../styles/navbar.css";
 import * as constants from "../constants/consts.js";
 
-
-class Catalog extends Component {
-    
+class NavBar extends Component {
     handleCatalogClick = (event) =>
-        this.props.user === null
-            ? event.preventDefault()
-            : alert(constants.NO_USER_SELECT_MSG);
-    
+        this.props.user === null ? event.preventDefault() : null;
+
     render() {
         return (
-            <div class="navbar-container">
-                 <Link to="/">Home</Link>
-                 <Link to="/catalog" onClick={this.handleCatalogClick}>{constants.CATALOG}</Link>
+            <div className="navbar-container">
+                <Link className="link" to="/">
+                    {constants.HOME}
+                </Link>
+
+                <Link
+                    className="link"
+                    to="/catalog"
+                    onClick={this.handleCatalogClick}
+                >
+                    {constants.CATALOG}
+                </Link>
             </div>
         );
     }
 }
 
-export default Catalog;
+export default NavBar;
